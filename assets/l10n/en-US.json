@@ -1,0 +1,25 @@
+{
+    "title": "test app",
+    "screens": {
+        "titles": {
+            "todos": "Todos Screen",
+            "photos": "Photos Screen",
+            "todo_detail": "Todo Detail",
+            "photo_detail": "Photo Detail",
+            "profile": "Profile"
+        }
+    },
+    "buttons": {
+        "titles": {
+            "go_to_todos_screen": "Todos",
+            "go_to_photos_screen": "Photos",
+            "login": "Login",
+            "logout": "Logout"
+        }
+    },
+    "errors": {
+        "messages": {
+            "default": "exception Error"
+        }
+    }
+}
