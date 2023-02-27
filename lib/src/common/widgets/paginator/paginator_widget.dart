@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:testpaginator/src/common/widgets/paginator/extension_methods.dart';
-import 'common.dart';
+import 'fetch_data_result.dart';
 
 class PaginatedList<K, T> extends StatefulWidget {
   final K initialPageNumber;

@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
-import '../../../common/widgets/paginator/common.dart';
+import '../../../common/widgets/paginator/fetch_data_result.dart';
 import '../application/photos_service.dart';
 import '../model/photo.dart';
 part 'photos_controller.g.dart';
