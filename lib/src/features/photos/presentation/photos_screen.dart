@@ -30,6 +30,9 @@ class PhotosScreen extends ConsumerWidget {
         firstPageKey: 1,
         provider: paginationPhotosControllerProvider,
         itemBuilder: (context, item, index) => ListTile(
+          onTap: () {
+            ref.read(goRouterProvider).go("$photosRoute/${item.id}");
+          },
           leading: Text(item.id.toString()),
           title: Text(item.title),
         ),
