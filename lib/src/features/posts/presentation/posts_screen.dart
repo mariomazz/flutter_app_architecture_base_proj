@@ -7,18 +7,17 @@ import '../../../common/widgets/fabs_navigation.dart';
 import '../../../localization/locale_keys.g.dart';
 import '../../../routes/constants.dart';
 import '../../../routes/router.dart';
-import '../model/photo.dart';
-import 'pagination_photo_controller.dart';
+import '../model/post.dart';
+import 'pagination_posts_controller.dart';
 
-class PhotosScreen extends ConsumerWidget {
-  const PhotosScreen({super.key});
+class PostsScreen extends ConsumerWidget {
+  const PostsScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      floatingActionButton: const FabsNavigation(),
       appBar: AppBar(
-        title: Text(LocaleKeys.screens_titles_photos.tr()),
+        title: Text(LocaleKeys.screens_titles_posts.tr()),
         actions: [
           IconButton(
             icon: const Icon(Icons.account_circle),
@@ -26,9 +25,10 @@ class PhotosScreen extends ConsumerWidget {
           ),
         ],
       ),
-      body: RiverPagedBuilder<int, PhotoDto>(
+      floatingActionButton: const FabsNavigation(),
+      body: RiverPagedBuilder<int, PostDto>(
         firstPageKey: 1,
-        provider: paginationPhotosControllerProvider,
+        provider: paginationPostsControllerProvider,
         itemBuilder: (context, item, index) => ListTile(
           leading: Text(item.id.toString()),
           title: Text(item.title),

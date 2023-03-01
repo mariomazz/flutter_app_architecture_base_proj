@@ -3,6 +3,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import '../../../common/widgets/fabs_navigation.dart';
 import '../../../localization/locale_keys.g.dart';
 import '../../../routes/constants.dart';
 import '../../../routes/router.dart';
@@ -36,10 +37,7 @@ class TodosScreenState extends ConsumerState<TodosScreen> {
     final todos = ref.watch(todosControllerProvider);
 
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        child: Text(LocaleKeys.buttons_titles_go_to_photos_screen.tr()),
-        onPressed: () => ref.read(goRouterProvider).go(photosRoute),
-      ),
+      floatingActionButton: const FabsNavigation(),
       appBar: AppBar(
         title: Text(LocaleKeys.screens_titles_todos.tr()),
         actions: [

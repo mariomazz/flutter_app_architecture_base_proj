@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import '../../../common/constants.dart';
 import '../model/photo.dart';
 part 'photos_repository.g.dart';
 
@@ -49,7 +50,7 @@ PhotosRepositoryInterface photosRepository(PhotosRepositoryRef ref) {
   final BaseOptions options = BaseOptions(
     connectTimeout: const Duration(milliseconds: 60000),
     receiveTimeout: const Duration(milliseconds: 30000),
-    baseUrl: "https://jsonplaceholder.typicode.com/",
+    baseUrl: jsonPlaceholderAPIbaseUrl,
   );
   final Dio client = Dio(options);
   final repo = PhotosRepository(client: client);

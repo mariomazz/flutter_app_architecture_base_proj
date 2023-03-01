@@ -4,6 +4,7 @@
         "titles": {
             "todos": "Todos Screen",
             "photos": "Photos Screen",
+            "posts": "Posts Screen",
             "todo_detail": "Todo Detail",
             "photo_detail": "Photo Detail",
             "profile": "Profile"
@@ -13,6 +14,7 @@
         "titles": {
             "go_to_todos_screen": "Todos",
             "go_to_photos_screen": "Photos",
+            "go_to_posts_screen": "Posts",
             "login": "Login",
             "logout": "Logout"
         }
@@ -21,5 +23,8 @@
         "messages": {
             "default": "exception Error"
         }
+    },
+    "common": {
+        "data_loaded": "Data Loaded"
     }
 }

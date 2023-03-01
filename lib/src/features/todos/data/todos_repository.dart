@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import '../../../common/constants.dart';
 import '../model/todo.dart';
 part 'todos_repository.g.dart';
 
@@ -38,7 +39,7 @@ TodosRepositoryInterface todosRepository(TodosRepositoryRef ref) {
   final BaseOptions options = BaseOptions(
     connectTimeout: const Duration(milliseconds: 60000),
     receiveTimeout: const Duration(milliseconds: 30000),
-    baseUrl: "https://jsonplaceholder.typicode.com/",
+    baseUrl: jsonPlaceholderAPIbaseUrl,
   );
   final Dio client = Dio(options);
   final authRepo = TodosRepository(client: client);

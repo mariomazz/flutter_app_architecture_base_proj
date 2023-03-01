@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../features/authentication/application/authentication_service.dart';
 import '../features/authentication/presentation/login/login_screen.dart';
+import '../features/posts/presentation/posts_screen.dart';
 import '../features/profile/presentation/profile_screen.dart';
 import '../features/todos/presentation/todos_screen.dart';
 import '../features/photos/presentation/photo_detail_screen.dart';
@@ -74,6 +75,14 @@ GoRouter goRouter(GoRouterRef ref) {
           context: context,
           state: state,
           child: const ProfileScreen(),
+        ),
+      ),
+      GoRoute(
+        path: postsRoute,
+        pageBuilder: (context, state) => _buildPageWithFadeTransition(
+          context: context,
+          state: state,
+          child: const PostsScreen(),
         ),
       ),
       GoRoute(
