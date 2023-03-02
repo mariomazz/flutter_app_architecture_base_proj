@@ -39,7 +39,8 @@ class TodosScreenState extends ConsumerState<TodosScreen> {
     return Scaffold(
       floatingActionButton: const FabsNavigation(),
       appBar: AppBar(
-        title: Text(LocaleKeys.screens_titles_todos.tr()),
+        // title: Text(LocaleKeys.screens_titles_todos.tr()),
+        title: Text(LocaleKeys.title.tr()),
         actions: [
           IconButton(
             icon: const Icon(Icons.account_circle),

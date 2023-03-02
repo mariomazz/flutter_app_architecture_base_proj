@@ -1,9 +1,11 @@
 // ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
+import 'create_material_color.dart';
 
 final ThemeData themeDark = ThemeData(
   useMaterial3: true,
-  brightness: Brightness.dark,
+  //brightness: Brightness.dark,
   primaryColor: const Color(0xff212121),
   primaryColorBrightness: Brightness.dark,
   primaryColorLight: const Color(0xff9e9e9e),
@@ -24,12 +26,12 @@ final ThemeData themeDark = ThemeData(
   dialogBackgroundColor: const Color(0xff424242),
   indicatorColor: const Color(0xff64ffda),
   hintColor: const Color(0x80ffffff),
-  buttonTheme: const ButtonThemeData(
+  buttonTheme: ButtonThemeData(
     textTheme: ButtonTextTheme.normal,
     minWidth: 88,
     height: 36,
-    padding: EdgeInsets.only(top: 0, bottom: 0, left: 16, right: 16),
-    shape: RoundedRectangleBorder(
+    padding: const EdgeInsets.only(top: 0, bottom: 0, left: 16, right: 16),
+    shape: const RoundedRectangleBorder(
       side: BorderSide(
         color: Color(0xff000000),
         width: 0,
@@ -38,25 +40,27 @@ final ThemeData themeDark = ThemeData(
       borderRadius: BorderRadius.all(Radius.circular(2.0)),
     ),
     alignedDropdown: false,
-    buttonColor: Color(0xff1eae1e),
-    disabledColor: Color(0x61ffffff),
-    highlightColor: Color(0x29ffffff),
-    splashColor: Color(0x1fffffff),
-    focusColor: Color(0x1fffffff),
-    hoverColor: Color(0x0affffff),
-    colorScheme: ColorScheme(
-      primary: Color(0xffd6f8d6),
-      primaryVariant: Color(0xff000000),
-      secondary: Color(0xff64ffda),
-      secondaryVariant: Color(0xff00bfa5),
-      surface: Color(0xff424242),
-      background: Color(0xff616161),
-      error: Color(0xffd32f2f),
-      onPrimary: Color(0xff000000),
-      onSecondary: Color(0xff000000),
-      onSurface: Color(0xffffffff),
-      onBackground: Color(0xff000000),
-      onError: Color(0xff000000),
+    buttonColor: const Color(0xff1eae1e),
+    disabledColor: const Color(0x61ffffff),
+    highlightColor: const Color(0x29ffffff),
+    splashColor: const Color(0x1fffffff),
+    focusColor: const Color(0x1fffffff),
+    hoverColor: const Color(0x0affffff),
+    colorScheme: ColorScheme.fromSwatch(
+            primarySwatch: createMaterialColor(const Color(0xffd6f8d6)))
+        .copyWith(
+      primary: const Color(0xffd6f8d6),
+      primaryVariant: const Color(0xff000000),
+      secondary: const Color(0xff64ffda),
+      secondaryVariant: const Color(0xff00bfa5),
+      surface: const Color(0xff424242),
+      background: const Color(0xff616161),
+      error: const Color(0xffd32f2f),
+      onPrimary: const Color(0xff000000),
+      onSecondary: const Color(0xff000000),
+      onSurface: const Color(0xffffffff),
+      onBackground: const Color(0xff000000),
+      onError: const Color(0xff000000),
       brightness: Brightness.dark,
     ),
   ),
@@ -418,7 +422,7 @@ final ThemeData themeDark = ThemeData(
     }),
   ),
   colorScheme: ColorScheme.fromSwatch(
-          primarySwatch: const MaterialColor(4280361249, {
+      primarySwatch: const MaterialColor(4280361249, {
     50: Color(0xfff2f2f2),
     100: Color(0xffe6e6e6),
     200: Color(0xffcccccc),
@@ -429,7 +433,9 @@ final ThemeData themeDark = ThemeData(
     700: Color(0xff4d4d4d),
     800: Color(0xff333333),
     900: Color(0xff191919)
-  }))
-      .copyWith(error: const Color(0xffd32f2f))
-      .copyWith(background: const Color(0xff616161)),
+  })).copyWith(
+    error: const Color(0xffd32f2f),
+    background: const Color(0xff616161),
+    brightness: Brightness.dark,
+  ),
 );

@@ -1,5 +1,7 @@
 // ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
+import 'create_material_color.dart';
 
 final ThemeData themeLight = ThemeData(
   useMaterial3: true,
@@ -24,12 +26,12 @@ final ThemeData themeLight = ThemeData(
   dialogBackgroundColor: const Color(0xffffffff),
   indicatorColor: const Color(0xff25da25),
   hintColor: const Color(0x8a000000),
-  buttonTheme: const ButtonThemeData(
+  buttonTheme: ButtonThemeData(
     textTheme: ButtonTextTheme.normal,
     minWidth: 88,
     height: 36,
-    padding: EdgeInsets.only(top: 0, bottom: 0, left: 16, right: 16),
-    shape: RoundedRectangleBorder(
+    padding: const EdgeInsets.only(top: 0, bottom: 0, left: 16, right: 16),
+    shape: const RoundedRectangleBorder(
       side: BorderSide(
         color: Color(0xff000000),
         width: 0,
@@ -38,23 +40,25 @@ final ThemeData themeLight = ThemeData(
       borderRadius: BorderRadius.all(Radius.circular(2.0)),
     ),
     alignedDropdown: false,
-    buttonColor: Color(0xffe0e0e0),
-    disabledColor: Color(0x61000000),
-    highlightColor: Color(0x29000000),
-    splashColor: Color(0x1f000000),
-    focusColor: Color(0x1f000000),
-    hoverColor: Color(0x0a000000),
-    colorScheme: ColorScheme(
-      primary: Color(0xffd6f8d6),
-      secondary: Color(0xff25da25),
-      surface: Color(0xffffffff),
-      background: Color(0xffa8f0a8),
-      error: Color(0xffd32f2f),
-      onPrimary: Color(0xff000000),
-      onSecondary: Color(0xff000000),
-      onSurface: Color(0xff000000),
-      onBackground: Color(0xff000000),
-      onError: Color(0xffffffff),
+    buttonColor: const Color(0xffe0e0e0),
+    disabledColor: const Color(0x61000000),
+    highlightColor: const Color(0x29000000),
+    splashColor: const Color(0x1f000000),
+    focusColor: const Color(0x1f000000),
+    hoverColor: const Color(0x0a000000),
+    colorScheme: ColorScheme.fromSwatch(
+            primarySwatch: createMaterialColor(const Color(0xffd6f8d6)))
+        .copyWith(
+      primary: const Color(0xffd6f8d6),
+      secondary: const Color(0xff25da25),
+      surface: const Color(0xffffffff),
+      background: const Color(0xffa8f0a8),
+      error: const Color(0xffd32f2f),
+      onPrimary: const Color(0xff000000),
+      onSecondary: const Color(0xff000000),
+      onSurface: const Color(0xff000000),
+      onBackground: const Color(0xff000000),
+      onError: const Color(0xffffffff),
       brightness: Brightness.light,
     ),
   ),

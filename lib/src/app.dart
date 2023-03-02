@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:testpaginator/src/config/themes/theme_light.dart';
 import 'config/themes/theme_dark.dart';
-import 'localization/locale_keys.g.dart';
 import 'routes/router.dart';
 
 class TestPaginator extends ConsumerWidget {
@@ -18,7 +17,7 @@ class TestPaginator extends ConsumerWidget {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      title: LocaleKeys.title.tr(),
+      title: "app",
       theme: themeLight,
       darkTheme: themeDark,
       themeMode: ThemeMode.system,
