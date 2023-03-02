@@ -5,7 +5,9 @@ import 'create_material_color.dart';
 
 final ThemeData themeDark = ThemeData(
   useMaterial3: true,
-  //brightness: Brightness.dark,
+  // https://stackoverflow.com/questions/71069904/getting-failed-assertion-with-setting-brightness-brightness-dark-for-darktheme
+  // dont't add this, fixes a flutter exception
+  // brightness: Brightness.dark,
   primaryColor: const Color(0xff212121),
   primaryColorBrightness: Brightness.dark,
   primaryColorLight: const Color(0xff9e9e9e),
