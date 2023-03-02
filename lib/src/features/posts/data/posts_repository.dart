@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:testpaginator/src/features/posts/model/paginated_posts.dart';
 import '../../../common/constants.dart';
+import '../../../core/services/cors_interceptor.dart';
 import '../model/post.dart';
 
 abstract class PostsRepositoryInterface {
@@ -45,8 +46,10 @@ final postsRepositoryProvider = Provider<PostsRepositoryInterface>((ref) {
     baseUrl: jsonPlaceholderAPIbaseUrl,
     connectTimeout: const Duration(milliseconds: 60000),
     receiveTimeout: const Duration(milliseconds: 30000),
+    extra: {"needsCors": true},
   );
   final Dio client = Dio(baseOptions);
+  client.interceptors.addAll([CorsInterceptor()]);
   final repo = PostsRepository(client: client);
   ref.onDispose(() => repo.dispose());
   return repo;

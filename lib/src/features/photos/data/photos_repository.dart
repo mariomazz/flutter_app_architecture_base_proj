@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import '../../../common/constants.dart';
+import '../../../core/services/cors_interceptor.dart';
 import '../model/photo.dart';
 part 'photos_repository.g.dart';
 
@@ -51,8 +52,10 @@ PhotosRepositoryInterface photosRepository(PhotosRepositoryRef ref) {
     connectTimeout: const Duration(milliseconds: 60000),
     receiveTimeout: const Duration(milliseconds: 30000),
     baseUrl: jsonPlaceholderAPIbaseUrl,
+    extra: {"needsCors": true},
   );
   final Dio client = Dio(options);
+  client.interceptors.addAll([CorsInterceptor()]);
   final repo = PhotosRepository(client: client);
   ref.onDispose(() => repo.dispose());
   return repo;
