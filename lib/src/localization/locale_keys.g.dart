@@ -7,6 +7,7 @@ abstract class  LocaleKeys {
   static const screens_titles_todos = 'screens.titles.todos';
   static const screens_titles_photos = 'screens.titles.photos';
   static const screens_titles_posts = 'screens.titles.posts';
+  static const screens_titles_users = 'screens.titles.users';
   static const screens_titles_todo_detail = 'screens.titles.todo_detail';
   static const screens_titles_photo_detail = 'screens.titles.photo_detail';
   static const screens_titles_profile = 'screens.titles.profile';
@@ -15,6 +16,7 @@ abstract class  LocaleKeys {
   static const buttons_titles_go_to_todos_screen = 'buttons.titles.go_to_todos_screen';
   static const buttons_titles_go_to_photos_screen = 'buttons.titles.go_to_photos_screen';
   static const buttons_titles_go_to_posts_screen = 'buttons.titles.go_to_posts_screen';
+  static const buttons_titles_go_to_users_screen = 'buttons.titles.go_to_users_screen';
   static const buttons_titles_login = 'buttons.titles.login';
   static const buttons_titles_logout = 'buttons.titles.logout';
   static const buttons_titles = 'buttons.titles';

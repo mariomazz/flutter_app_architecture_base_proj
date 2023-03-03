@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -11,7 +12,7 @@ class ProfileScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(LocaleKeys.screens_titles_profile.tr()),
+        title: AutoSizeText(LocaleKeys.screens_titles_profile.tr()),
       ),
       body: Center(
         child: ElevatedButton(
@@ -20,7 +21,7 @@ class ProfileScreen extends ConsumerWidget {
                 .read(profileScreenControllerProvider.notifier)
                 .didTapLogout();
           },
-          child: Text(LocaleKeys.buttons_titles_logout.tr()),
+          child: AutoSizeText(LocaleKeys.buttons_titles_logout.tr()),
         ),
       ),
     );

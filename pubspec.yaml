@@ -48,6 +48,8 @@ dependencies:
   shared_preferences: ^2.0.18
   riverpod_infinite_scroll: ^1.0.9
   flutter_native_splash: ^2.2.18
+  responsive_framework: ^0.2.0
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:

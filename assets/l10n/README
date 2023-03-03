@@ -10,7 +10,7 @@
 
 EXAMPLE : 
 
-    const Text(LocaleKeys.msg).tr(namedArgs: {
+    const AutoSizeText(LocaleKeys.msg).tr(namedArgs: {
         "name": "Mario Mazzarelli",
         "body": "il mio bellissimo"
     }),

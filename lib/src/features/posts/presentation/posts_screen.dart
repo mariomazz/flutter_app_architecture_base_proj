@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -17,7 +18,7 @@ class PostsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(LocaleKeys.screens_titles_posts.tr()),
+        title: AutoSizeText(LocaleKeys.screens_titles_posts.tr()),
         actions: [
           IconButton(
             icon: const Icon(Icons.account_circle),
@@ -30,8 +31,8 @@ class PostsScreen extends ConsumerWidget {
         firstPageKey: 1,
         provider: paginationPostsControllerProvider,
         itemBuilder: (context, item, index) => ListTile(
-          leading: Text(item.id.toString()),
-          title: Text(item.title),
+          leading: AutoSizeText(item.id.toString()),
+          title: AutoSizeText(item.title),
         ),
         pagedBuilder: (controller, builder) => PagedListView(
           pagingController: controller,

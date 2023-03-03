@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -18,7 +19,7 @@ class PhotosScreen extends ConsumerWidget {
     return Scaffold(
       floatingActionButton: const FabsNavigation(),
       appBar: AppBar(
-        title: Text(LocaleKeys.screens_titles_photos.tr()),
+        title: AutoSizeText(LocaleKeys.screens_titles_photos.tr()),
         actions: [
           IconButton(
             icon: const Icon(Icons.account_circle),
@@ -33,8 +34,8 @@ class PhotosScreen extends ConsumerWidget {
           onTap: () {
             ref.read(goRouterProvider).go("$photosRoute/${item.id}");
           },
-          leading: Text(item.id.toString()),
-          title: Text(item.title),
+          leading: AutoSizeText(item.id.toString()),
+          title: AutoSizeText(item.title),
         ),
         pagedBuilder: (controller, builder) => PagedListView(
           pagingController: controller,

@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -16,24 +17,26 @@ class PhotoDetailScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final asyncPhoto = ref.watch(photoControllerProvider(photoId));
     return Scaffold(
-      appBar: AppBar(title: Text(LocaleKeys.screens_titles_photo_detail.tr())),
+      appBar: AppBar(
+          title: AutoSizeText(LocaleKeys.screens_titles_photo_detail.tr())),
       body: asyncPhoto.when(
         data: (photo) {
           return Center(
             child: ListTile(
-              title: Text(photo.title),
+              title: AutoSizeText(photo.title),
               subtitle: SizedBox(
                 height: 150,
                 width: 150,
                 child: CachedNetworkImage(imageUrl: photo.thumbnailUrl),
               ),
-              leading: Text(photo.id.toString()),
-              trailing: Text(photo.albumId.toString()),
+              leading: AutoSizeText(photo.id.toString()),
+              trailing: AutoSizeText(photo.albumId.toString()),
             ),
           );
         },
         error: (err, stacktrace) {
-          return Center(child: Text(LocaleKeys.errors_messages_default.tr()));
+          return Center(
+              child: AutoSizeText(LocaleKeys.errors_messages_default.tr()));
         },
         loading: () {
           return const Center(child: CircularProgressIndicator());

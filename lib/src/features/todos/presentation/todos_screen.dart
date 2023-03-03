@@ -1,5 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -39,8 +40,7 @@ class TodosScreenState extends ConsumerState<TodosScreen> {
     return Scaffold(
       floatingActionButton: const FabsNavigation(),
       appBar: AppBar(
-        // title: Text(LocaleKeys.screens_titles_todos.tr()),
-        title: Text(LocaleKeys.title.tr()),
+        title: AutoSizeText(LocaleKeys.screens_titles_todos.tr()),
         actions: [
           IconButton(
             icon: const Icon(Icons.account_circle),
@@ -81,17 +81,18 @@ class TodosScreenState extends ConsumerState<TodosScreen> {
                   onTap: () {
                     ref.read(goRouterProvider).go("$todosRoute/${e.id}");
                   },
-                  title: Text(e.title),
-                  subtitle: Text("${e.completed}"),
-                  leading: Text(e.userId.toString()),
-                  trailing: Text(e.userId.toString()),
+                  title: AutoSizeText(e.title),
+                  subtitle: AutoSizeText("${e.completed}"),
+                  leading: AutoSizeText(e.userId.toString()),
+                  trailing: AutoSizeText(e.userId.toString()),
                 );
               },
             ),
           );
         },
         error: (err, stacktrace) {
-          return Center(child: Text(LocaleKeys.errors_messages_default.tr()));
+          return Center(
+              child: AutoSizeText(LocaleKeys.errors_messages_default.tr()));
         },
         loading: () {
           return const Center(child: CircularProgressIndicator());

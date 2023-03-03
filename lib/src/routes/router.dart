@@ -1,3 +1,5 @@
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
@@ -9,6 +11,8 @@ import '../features/todos/presentation/todos_screen.dart';
 import '../features/photos/presentation/photo_detail_screen.dart';
 import '../features/photos/presentation/photos_screen.dart';
 import '../features/todos/presentation/todo_detail_screen.dart';
+import '../features/users/presentation/users_screen.dart';
+import '../localization/locale_keys.g.dart';
 import 'constants.dart';
 import 'router_refresh_stream.dart';
 part 'router.g.dart';
@@ -86,6 +90,14 @@ GoRouter goRouter(GoRouterRef ref) {
         ),
       ),
       GoRoute(
+        path: usersRoute,
+        pageBuilder: (context, state) => _buildPageWithFadeTransition(
+          context: context,
+          state: state,
+          child: const UsersScreen(),
+        ),
+      ),
+      GoRoute(
         path: authRoute,
         pageBuilder: (context, state) => _buildPageWithFadeTransition(
           context: context,
@@ -108,10 +120,10 @@ GoRouter goRouter(GoRouterRef ref) {
     debugLogDiagnostics: true,
     errorPageBuilder: (context, state) => MaterialPage<void>(
       key: state.pageKey,
-      child: const Scaffold(
+      child: Scaffold(
         backgroundColor: Colors.white,
         body: Center(
-          child: Text('Error'),
+          child: AutoSizeText(LocaleKeys.errors_messages_default.tr()),
         ),
       ),
     ),

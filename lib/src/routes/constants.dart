@@ -4,3 +4,4 @@ const photosRoute = "/photos";
 const authRoute = "/auth";
 const profileRoute = "/profile";
 const postsRoute = "/posts";
+const usersRoute = "/users";
